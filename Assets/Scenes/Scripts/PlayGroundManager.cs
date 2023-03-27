@@ -11,6 +11,7 @@ public class PlayGroundManager : MonoBehaviour
     public static PlayGroundManager instance;
     [SerializeField] private int characterCount;
 
+    public GameObject player;
 
     private void Awake()
     {
@@ -28,7 +29,8 @@ public class PlayGroundManager : MonoBehaviour
     }
     public void GameHasStarted(string playerId)
     {
-        GameObject player = Instantiate(CharacterList[playerId], new Vector3(0, 0, 0), Quaternion.identity);
+        player = Instantiate(CharacterList[playerId], new Vector3(0, 0, 0), Quaternion.identity);
+        AIManager.playerTransform = player.transform;
         if (player)
         {
             player.AddComponent<PlayerController>();

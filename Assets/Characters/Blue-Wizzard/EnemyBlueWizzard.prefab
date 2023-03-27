@@ -2228,7 +2228,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8082625000749320009}
   - component: {fileID: 8201711302698047391}
-  - component: {fileID: 8817305355491840307}
+  - component: {fileID: 2814607302390202762}
+  - component: {fileID: 2697700058825236594}
   m_Layer: 0
   m_Name: WizardBody
   m_TagString: Untagged
@@ -2370,7 +2371,7 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.0000038146973, y: 9.283916, z: 89.01546}
     m_Extent: {x: 116.46152, y: 48.080334, z: 112.55812}
   m_DirtyAABB: 0
---- !u!135 &8817305355491840307
+--- !u!135 &2814607302390202762
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2378,11 +2379,25 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8088298808059512225}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 18.014446
-  m_Center: {x: -0.0150260925, y: -0.008388519, z: -0.09283829}
+  m_Radius: 17.961647
+  m_Center: {x: -0.04147339, y: -0.022277832, z: -0.092840195}
+--- !u!114 &2697700058825236594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8088298808059512225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 793325d5b3f5ce84380ce1984c418676, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Enemies: []
+  tempFocus: {fileID: 0}
 --- !u!1 &8088307413761309641
 GameObject:
   m_ObjectHideFlags: 0
@@ -2650,10 +2665,12 @@ GameObject:
   m_Component:
   - component: {fileID: 8085101907750988735}
   - component: {fileID: 8171989396376809103}
-  - component: {fileID: 8171989396376809100}
-  - component: {fileID: 1716985954126536689}
+  - component: {fileID: 1004972445602036787}
+  - component: {fileID: 6727319077535802962}
+  - component: {fileID: 8050112599386631350}
+  - component: {fileID: 4019751773697831735}
   m_Layer: 0
-  m_Name: BlueWizzard 1
+  m_Name: EnemyBlueWizzard
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2699,25 +2716,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!143 &8171989396376809100
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8088387201446982055}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Height: 2
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 1, z: 0}
---- !u!195 &1716985954126536689
+--- !u!195 &1004972445602036787
 NavMeshAgent:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2739,6 +2738,52 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!54 &6727319077535802962
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8088387201446982055}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!136 &8050112599386631350
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8088387201446982055}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2.0201123
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.0066899, z: 0}
+--- !u!114 &4019751773697831735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8088387201446982055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6ddcebac57e8a04f940a5c2b8f69da5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 15
+  speed: 2
+  turnSmoothTime: 0.1
+  turnSmoothVelocity: 1
 --- !u!1 &8088391627037932169
 GameObject:
   m_ObjectHideFlags: 0

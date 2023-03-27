@@ -6,6 +6,8 @@ TagManager:
   tags:
   - RightButton
   - LeftButton
+  - Ground
+  - Golem
   layers:
   - Default
   - TransparentFX
